@@ -9,35 +9,30 @@
     <link type="text/css" rel="stylesheet" href="../static/20220409/src/jquery-rvnm.css"/>
 </head>
 <body>
+
 <nav id="navbar" class="">
     <ul>
         <li>
             <a href="#">
-                <i class="fa fa-bell-o"></i>
-                项目管理
+                项目列表
             </a>
-            <ul>
-                <li>
-                    <a href="#">
-                        项目列表
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        接口库
-                    </a>
-                </li>
-                <li>
-                    <a href="/case_list">
-                        用例库
-                    </a>
-                </li>
-
-            </ul>
-
+        </li>
+        <li>
+            <a href="#">
+                接口调试
+            </a>
+        </li>
+        <li>
+            <a href="">
+                帮助
+            </a>
+        </li>
+        <li>
+            <a href="">
+                后台
+            </a>
         </li>
     </ul>
-
 </nav>
 
 <div style="float: right">
@@ -74,7 +69,7 @@
             menu.style.display = 'none';
             btn.style.marginLeft = "0px";
             btn.innerText = '显示'
-        }else{
+        } else {
             menu.style.display = 'block';
             btn.style.marginLeft = "217px";
             btn.innerText = '隐藏'
