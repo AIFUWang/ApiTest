@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
+from MyApp.models import *
 
 # Create your views here.
 
@@ -23,11 +24,17 @@ def home(request):
 def login(request):
     return render(request, 'login.html')
 
+
 def logout(request):
     from django.contrib import auth
     auth.logout(request)
     return HttpResponseRedirect('/login/')
 
+def pei(request):
+    tucao_text = request.GET['tucao_text']
+
+    DB_tucao.objects.create(user=request.user.username, text=tucao_text)
+    return HttpResponse('')
 
 def login_action(request):
     u_name = request.GET['username']

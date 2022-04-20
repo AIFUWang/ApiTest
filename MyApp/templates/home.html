@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        body{
+            background: url("../static/太空.jpeg");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 <div style="text-align: center">
 
-    <h1><br>欢迎 {{ username }} 使用接口测试平台</h1>
-    <h3>welcome to ApiTest</h3>
-    <textarea style="border-radius: 5px;padding-left: 10px;box-shadow: 4px 4px 9px grey" id="tucao_input" cols="50" rows="10" placeholder="吐槽专用，点击 呸 按钮，即可怒喷开发者！"></textarea>
+    <h1 style="color: white"><br>欢迎 {{ username }} 使用接口测试平台</h1>
+    <h3 style="color: white;">welcome to ApiTest</h3>
+    <textarea style="border-radius: 5px;padding-left: 10px;box-shadow: 4px 4px 9px grey" id="tucao_input" cols="50"
+              rows="10" placeholder="吐槽专用，点击 呸 按钮，即可怒喷开发者！"></textarea>
     <br>
-    <button style="border-radius: 0px 0px 50px 50px; width: 100px">呸 ！ </button>
+    <button onclick="pei()" style="border-radius: 0px 0px 50px 50px; width: 100px">呸 ！</button>
     <br>
     <img src="../static/wechat.jpeg" alt="图片丢了" style="width: auto">
 
-
+    <script>
+        function pei() {
+            $.get("/pei/", {
+                "tucao_text": document.getElementById("tucao_input").value,
+            }, function (ret) {
+                alert('已成功吐槽！')
+            })
+        }
+    </script>
 </div>
 </body>
 </html>

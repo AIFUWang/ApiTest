@@ -26,6 +26,7 @@ urlpatterns = [
     url('^home/', home),
     url('^login/', login),
     url('^logout/', logout),
+    url('^pei/', pei),
     url('^login_action/$', login_action),
     url('^account_action/$', login),
     url('^register_action/$', register_action),
